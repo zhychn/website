@@ -1,0 +1,271 @@
+/* 字体定义 */
+@font-face {
+    font-family: 'Qiji';
+    src: url('fonts/qiji.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'JetBrains Mono';
+    src: url('fonts/JetBrainsMono-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    font-family: 'JetBrains Mono', '仿宋', 'FangSong', 'Inter', sans-serif;
+    background-color: #fffefd;
+    color: #333333;
+    line-height: 1.6;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+}
+
+.welcome-container {
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 15px;
+}
+
+.welcome {
+    font-family: 'Qiji', '仿宋', 'FangSong', serif;
+    font-size: 6rem;
+    font-weight: 500;
+    color: #222;
+    margin-right: 15px;
+}
+
+.red-circle {
+    width: 12px;
+    height: 12px;
+    border: 2px solid #e53935;
+    border-radius: 50%;
+    margin-bottom: 26px;
+    background-color: transparent;
+}
+
+.intro {
+    font-family: '仿宋', 'FangSong', 'JetBrains Mono', serif;
+    font-size: 1.2rem;
+    max-width: 600px;
+    color: #444;
+    font-weight: 300;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+/* 英文内容使用JetBrains Mono字体 */
+.intro:lang(en) {
+    font-family: 'JetBrains Mono', 'Inter', monospace;
+}
+
+.links {
+    display: flex;
+    gap: 25px;
+}
+
+.links a {
+    color: #555;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.links a:hover {
+    color: #e53935;
+    transform: translateY(-2px);
+}
+
+footer {
+    padding: 20px 0;
+    width: 100%;
+    position: relative;
+}
+
+.footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.copyright {
+    font-family: '仿宋', 'FangSong', serif;
+    font-size: 0.95rem;
+    color: #666;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex-shrink: 1;
+    min-width: 0;
+}
+
+.language-switcher {
+    position: relative;
+    flex-shrink: 0;
+    margin-left: 15px;
+}
+
+.language-btn {
+    background: none;
+    border: 2px solid #e53935;
+    color: #e53935;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    font-weight: bold;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-radius: 0;
+}
+
+.language-btn:hover {
+    background-color: #e53935;
+    color: white;
+    transform: scale(1.05);
+}
+
+/* 动画效果 */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.welcome-container {
+    animation: fadeIn 0.8s ease-out;
+}
+
+.intro {
+    animation: fadeIn 1s ease-out;
+}
+
+.links {
+    animation: fadeIn 1.2s ease-out;
+}
+
+footer {
+    animation: fadeIn 1.4s ease-out;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .welcome {
+        font-size: 6rem;
+    }
+    
+    .red-circle {
+        width: 12px;
+        height: 12px;
+        margin-bottom: 26px;
+    }
+    
+    .intro {
+        font-size: 1.1rem;
+    }
+    
+    .links a {
+        font-size: 1.8rem;
+    }
+    
+    .footer-content {
+        flex-wrap: nowrap;
+    }
+    
+    .copyright {
+        font-size: 0.85rem;
+    }
+    
+    .language-btn {
+        width: 30px;
+        height: 30px;
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .welcome {
+        font-size: 3rem;
+    }
+    
+    .red-circle {
+        width: 8px;
+        height: 8px;
+        margin-bottom: 16px;
+    }
+    
+    .intro {
+        font-size: 1rem;
+    }
+    
+    .links {
+        gap: 20px;
+    }
+    
+    .links a {
+        font-size: 1.6rem;
+    }
+    
+    .copyright {
+        font-size: 0.8rem;
+    }
+    
+    .language-btn {
+        width: 28px;
+        height: 28px;
+        font-size: 0.65rem;
+    }
+}
+
+/* 超小屏幕适配 */
+@media (max-width: 360px) {
+    .footer-content {
+        padding: 0 10px;
+    }
+    
+    .copyright {
+        font-size: 0.75rem;
+    }
+    
+    .language-btn {
+        width: 26px;
+        height: 26px;
+        font-size: 0.6rem;
+    }
+}
